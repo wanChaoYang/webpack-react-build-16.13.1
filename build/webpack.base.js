@@ -16,7 +16,12 @@ module.exports = {
     rules: [
       {
         test: /\.(css|less)$/,
-        use: [ MiniCssExtractPlugin.loader, "css-loader", "less-loader", "postcss-loader" ]
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader" },
+          { loader: "postcss-loader" },
+          { loader: "less-loader" }
+        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -32,7 +37,7 @@ module.exports = {
         use: {
           loader: 'babel-loader', // *引入babel-loader
           options: {
-            presets: [ '@babel/preset-env','@babel/preset-react' ],// *引入预设
+            presets: [ '@babel/preset-env', '@babel/preset-react' ],// *引入react预设
             plugins: [
               [
                 '@babel/plugin-transform-runtime' // *配置插件信息

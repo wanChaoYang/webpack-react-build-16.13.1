@@ -8,6 +8,10 @@ const About = Loadable({
     loader: () => import("../pages/about"),
     loading: () => null
 })
+const Sortablejs = Loadable({
+    loader: () => import("../pages/sortablejs/sortablejs"),
+    loading: () => null
+})
 const router = [
     {
         path: "/",
@@ -18,6 +22,12 @@ const router = [
     {
         path: "/about",
         element: About,
+        cache: false,
+        exact: false,
+    },
+    {
+        path: "/sortablejs",
+        element: Sortablejs,
         cache: false,
         exact: false,
     }
