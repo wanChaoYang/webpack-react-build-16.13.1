@@ -4,8 +4,8 @@ const Home = Loadable({
     loader: () => import("../pages/home"),
     loading: () => null
 })
-const About = Loadable({
-    loader: () => import("../pages/about"),
+const Pinyinjs = Loadable({
+    loader: () => import("../pages/pinyinjs"),
     loading: () => null
 })
 const Sortablejs = Loadable({
@@ -20,8 +20,8 @@ const router = [
         exact: true,
     },
     {
-        path: "/about",
-        element: About,
+        path: "/pinyinjs",
+        element: Pinyinjs,
         cache: false,
         exact: false,
     },
